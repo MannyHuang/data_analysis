@@ -120,3 +120,12 @@ HMM隐马尔可夫模型
 
 同时解决等级泄露和等级沉没这两个问题--PageRank 的随机浏览模型
 用户并不都是按照跳转链接的方式来上网，还有一种可能是不论当前处于哪个页面，都有概率访问到其他任意的页面，比如说用户就是要直接输入网址访问其他页面，虽然这个概率比较小。定义一个阻尼因子 d，代表用户按照跳转链接来上网的概率，通常可以取一个固定值 0.85，而 1-d=0.15 则代表了用户不是通过跳转链接的方式来访问网页的，比如直接输入网址。
+
+
+## regression
+loss function 评价goodniss
+通过gradient descent找到使loss function最小的模型参数，其中涉及到leaning rate（可用adagrad修正）
+gradient descent 可能会陷入local minima、saddle point、 plateau
+模型太复杂容易导致过拟合，因此大部分情况下可以使用regularization（假设smoother function is better）
+模型效果不好可能是因为hidden factor，若有分类数据应可视化类别寻找规律。
+
