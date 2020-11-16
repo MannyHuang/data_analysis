@@ -129,3 +129,23 @@ gradient descent 可能会陷入local minima、saddle point、 plateau
 模型太复杂容易导致过拟合，因此大部分情况下可以使用regularization（假设smoother function is better）
 模型效果不好可能是因为hidden factor，若有分类数据应可视化类别寻找规律。
 
+### error的来源：bias + variance
+假设m为N个样本点的平均值，mu为总体均值,sigma为总体标准差
+除非N趋于无穷大，否则m不等于mu
+但是当对m取期望值时，E[m] = mu，无偏估计
+var[m] = sigma^2/N  N很大时，m围绕mu越密集，N很小时，越分散
+bias是对所有的估计量求期望，是否接近总体值，bias 越小，越接近
+
+s^2 = sum(x^n-m)^2 / N  
+E(s^2) = (N-1)*sigma^2 / N  比sigma^2小，有偏估计，N越大，越集中在sigma^2附近
+
+模型越复杂，variance越大（模型越简单，越不容易受样本数据影响，比如f(x)=c），bias越小
+bias很大，会导致underfitting，variance很大导致overfitting 
+
+如果模型不能很好的拟合训练数据（underfitting）则有较大bias；如果测试数据的error较大（overfitting），则有较大的variance
+
+bias大时：redesign the model（增加样本量也无济于事），1. 增加更多特征；2. 设计更复杂的模型
+variance大时：1. 增加样本量； 2.regularization（更平滑）
+
+模型选择时（一般选择测试数据中error最小的模型）
+由于测试数据是固定的，对于外界真实环境中更多更丰富的测试数据而言，也具有bias
