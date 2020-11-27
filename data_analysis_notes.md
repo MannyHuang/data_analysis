@@ -1,3 +1,43 @@
+## 数据挖掘
+### Data
+- 定义：定量或定性的属性值  （最底层的表现形式，信息是处理后的数据，比数据表现形式高一层）
+- 类型
+  - 连续、二进制
+  - 离散、字符串
+  - 符号
+- 存储
+  - 物理型 （eg：磁盘上存储过为01）
+  - 逻辑型 （eg：数据库中的二维表）
+- 主要问题
+  - 转换
+  - 错误
+
+### Big Data
+- 定义：
+  - Gartner Co：数据量大、速度快、种类多（high-volume(Terabytes -> Zettabytes)、high-velocity(Batch -> Streaming Data)、high-variety(Structured -> Structured & Unstructured)）
+  - Mckinsey Co：数据超出传统信息技术处理能力
+- 应用
+  - 公共安全 eg：Houston犯罪率地图，挖掘犯罪规律，以预防再度发生
+  - 医疗保健 eg：药剂量应该因人而异，个性化定制医疗方案（根据基因分组）
+  - 城市规划 统计上班人流量来建地铁、车站、超市
+  - 地理数据 美食推荐app 超市购物车轨迹追踪（货架停留时间，是否购买，货品区人流量实时监控）
+  - 零售业 根据目标顾客人物画像个性推荐、情感分析（售后评价）
+  - 社交网络 识别有影响力的人
+
+### Open Data
+多为政府掌握，非公开，难以获取
+公开的趋势
+  - Legally Open
+  - Technically Open
+
+### Data Mining
+- Definition: the Process of automatically extracting *interesting* and *useful hidden* patterns from usually *massive*, incomplete and noisy data
+
+- Not a fully automatic process
+  - human intervention are often inevitable
+  - Domain Knowledge
+  - Data Collection & Processing
+
 ## Python
 ### 删除列数据空格
 str.strip()会删除*数字型*数据和字符*左右两侧*的空格

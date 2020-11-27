@@ -5,6 +5,36 @@
 
 当然不是所有的算法都需要进行数据规范化。在构造决策树的时候，可以不用提前做数据规范化，因为我们不需要关心特征值的大小维度，也没有使用到梯度下降来做优化，所以数据规范化对决策树的构造结果和构造效率影响不大。除此之外，还是建议你在做数据挖掘算法前进行数据规范化。
 
+## Classification (Supervised)
+- Algorithm
+  - Decision Trees
+  - KNN
+  - Neural Network
+  - SVM
+- Application
+  - Medical Diagnosis: Positive/Negative
+  - Churn Prediction  
+- classification  boundary
+- Confusion Matrix -> Receiver Operating Characteristic -> Area Under Curve
+- Cost Sensitive Learning: weight
+- Lift Analysis   lift means the efficiency lift after using an algorithm or a model
+
+## Cluster (Unsupervised)
+- Distance Metrics
+  - Euclidean Distance
+  - Manhattan Distance
+  - Mahalanobis Distance
+
+- Algorithms
+  - K-Means
+  - Sequential Leader
+  - Affinity Propagation
+
+- Application 
+  - Market Research
+  - Image Segmentation
+  - Social Network Analysis
+
 
 ### 决策树
 构造过程需要决定三个问题：作为根结点、子节点的属性有哪些，何时停止得到最佳状态（叶节点）。
@@ -149,3 +179,20 @@ variance大时：1. 增加样本量； 2.regularization（更平滑）
 
 模型选择时（一般选择测试数据中error最小的模型）
 由于测试数据是固定的，对于外界真实环境中更多更丰富的测试数据而言，也具有bias
+解决方法：训练数据细分为训练集和验证集，进而发展出k折交叉验证
+
+Adaptive Learning Rates
+- 开始时，离目标很远，需要用较大的lr，靠近目标时，需要减小lr，lr可以设置为：lr/sqrt(t+1)
+- lr并不普适于所有参数，不同的参数应该使用不同的lr。（Adagrad：结合拟牛顿法调整步长）
+
+stochastic gradient descent
+计算某一个样本（而不是全部）的loss，然后update参数只考虑这个样本的梯度
+
+feature scaling
+所有特征范围归一
+没有进行归一化，梯度下降沿着法线方向走（两参数椭圆状）不会直接走向最低点，绕远路，效率低；归一化后（圆）直接走向中心点，效率高。
+常用：标准化
+
+gradient descent 不一定都能减小loss
+
+

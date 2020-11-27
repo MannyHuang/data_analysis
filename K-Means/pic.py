@@ -33,5 +33,6 @@ pic_mark = image.new('L', (width, height))
 for x in range(width):
   for y in range(height):
     pic_mark.putpixel((x, y), int(256/(label[x][y]+1))-1)
+    
 
 pic_mark.save("weixin_mark.jpg", "JPEG")
